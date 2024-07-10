@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашняя страница</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <style>
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 220px;
+        }
+        .content {
+            margin-left: 500px; /* Adjust this value based on the width of the sidebar */
+            padding: 20px;
+        }
+        .large-img {
+            max-width: 100%; /* Make image responsive */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Center the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <aside class="sidebar bg-light">
+            <div class="position-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+                            Главная страница
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'add_film' %}">
+                            Добавить фильм
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'list_films' %}">
+                            Список фильмов
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="content">
+            <div class="card mt-9">
+                <img src="{% static 'films/img/poster.jpg' %}" class="card-img-top large-img" alt="Фото">
+                <div class="card-body">
+                    <h5 class="card-title">Добро пожаловать на сайт о фильмах!</h5>
+                    <p class="card-text">Здесь вы можете добавлять свои любимые фильмы, читать описания и отзывы других пользователей.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
