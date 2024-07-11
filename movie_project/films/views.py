@@ -18,5 +18,3 @@ def add_film(request):
 def list_films(request):
     films = Film.objects.all()
     return render(request, 'films/list_films.html', {'films': films})
-
-
